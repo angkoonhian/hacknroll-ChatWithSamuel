@@ -41,16 +41,18 @@
       </div>
     </div>
     <div class="chat-container">
+      <form id="chat-form-file" action="/upload" method="POST" enctype="multipart/form-data">
       <header class="chat-header">
         <h1><img src=""> Chat With Samuel!</h1>
-        <button href="index.html" class="btn">Upload file</button>
+        <label href="index.html" class="btn">Upload file
+        <input type="file" id="textFile" name="textFile" style="display:none">
+        </label>
       </header>
       <main class="chat-main">
         <div class="chat-messages"></div>
       </main>
       <div class="chat-form-container">
-        <form id="chat-form">
-          <button class="btn" style="width: 100%;"><i class="fas fa-paper-plane"></i> Process</button>
+          <button class="btn" style="width: 100%;" type="submit"><i class="fas fa-paper-plane" onclick="uploadFile()"></i> Process</button>
         </form>
       </div>
     </div>

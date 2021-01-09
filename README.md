@@ -1,7 +1,2 @@
-## Usage
-```
-npm install
-npm run dev
-
-Go to localhost:3000
-```
+# hacknroll2021
+Hack and Roll 2021!!!

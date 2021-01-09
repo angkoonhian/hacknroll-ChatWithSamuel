@@ -14,8 +14,26 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, 'uploads');
+//   },
+//   filename: (req, file, cb) => {
+//     const { originalname } = file;
+//     cb(null, `${uuid()}-${originalname}`);
+//   }
+// })
+// const upload = multer({storage});
+
+app.post('/upload',(req, res) => {
+  return res.json({ status: 'OK'});
+});
+
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
+
+const { spawn } = require('child_process');
+const child = spawn('python', ['./pdf_png_text_extraction.py']);
 
 const botName = 'Where is samuel Bot';
 

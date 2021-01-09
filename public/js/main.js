@@ -2,6 +2,9 @@ const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
+//const { spawn } = require('child_process');
+
+//const child = spawn('python', ['./pdf_png_text_extraction.py']);
 
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
@@ -48,6 +51,7 @@ chatForm.addEventListener('submit', e => {
   e.target.elements.msg.value = '';
   e.target.elements.msg.focus();
 });
+
 
 // Output message to DOM
 function outputMessage(message) {
